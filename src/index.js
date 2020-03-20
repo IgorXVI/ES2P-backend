@@ -15,6 +15,9 @@ const db = require("./db")({
 })
 const errors = require("./errors")()
 const helpers = require("./helpers")()
+const services = require("./services")({
+    db
+})
 const middlewares = require("./middlewares")({
     errors
 })
