@@ -10,6 +10,8 @@ module.exports = {
         .createTable("products", table => {
             table.increments("id")
             table.timestamps()
+            table.date("execution")
+            table.date("end")
             table.integer("quantity")
                 .unsigned()
                 .notNullable()
