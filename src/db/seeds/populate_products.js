@@ -16,47 +16,47 @@ module.exports = {
             .insert([
                 {
                     quantity: 81,
-                    machineId: 1
+                    machine_id: 1
                 },
                 {
                     quantity: 82,
-                    machineId: 1
+                    machine_id: 1
                 },
                 {
                     quantity: 83,
-                    machineId: 1
+                    machine_id: 1
                 },
                 {
                     quantity: 84,
-                    machineId: 1
+                    machine_id: 1
                 },
                 {
                     quantity: 85,
-                    machineId: 1
+                    machine_id: 1
                 },
                 {
                     quantity: 86,
-                    machineId: 1
+                    machine_id: 1
                 },
                 {
                     quantity: 87,
-                    machineId: 2
+                    machine_id: 2
                 },
                 {
                     quantity: 88,
-                    machineId: 2
+                    machine_id: 2
                 },
                 {
                     quantity: 89,
-                    machineId: 2
+                    machine_id: 2
                 },
                 {
                     quantity: 90,
-                    machineId: 2
+                    machine_id: 2
                 },
                 {
                     quantity: 91,
-                    machineId: 2
+                    machine_id: 2
                 }
             ])
     }
