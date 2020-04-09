@@ -3,11 +3,11 @@ module.exports = {
         .createTable("machines", table => {
             table.increments("id")
 
-            table.timestamp('created_at')
+            table.timestamp('createdAt')
                 .notNullable()
                 .defaultTo(knex.fn.now())
 
-            table.timestamp('updated_at')
+            table.timestamp('updatedAt')
                 .notNullable()
                 .defaultTo(knex.fn.now())
 
@@ -18,23 +18,23 @@ module.exports = {
         .createTable("products", table => {
             table.increments("id")
 
-            table.timestamp('created_at')
+            table.timestamp('createdAt')
                 .notNullable()
                 .defaultTo(knex.fn.now())
 
-            table.timestamp('updated_at')
+            table.timestamp('updatedAt')
                 .notNullable()
                 .defaultTo(knex.fn.now())
 
-            table.date("execution_start")
+            table.timestamp("executionStart")
 
-            table.date("execution_end")
+            table.timestamp("executionEnd")
 
             table.integer("quantity")
                 .unsigned()
                 .notNullable()
 
-            table.integer("machine_id")
+            table.integer("machineId")
                 .unsigned()
                 .notNullable()
                 .references("machines.id")
