@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
-const groupByMachine = require("./groupByMachine")
+const productsByMachine = require("./productsByMachine")
 
 describe("product by machine", () => {
     it("should group by machine", () => {
-        const result = groupByMachine({
+        const result = productsByMachine({
             arr: [
                 {
                     id: 1,

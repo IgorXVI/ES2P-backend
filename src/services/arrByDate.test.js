@@ -4,11 +4,9 @@ const arrByDate = require("./arrByDate")
 describe("arr by date tests", () => {
     it("should group by day", () => {
         const result = arrByDate({
-            determineDate: date => date.split(" ")[0]
-        })({
             arrName: "products",
-            dateAtribute: "createdAt"
-        })({
+            type: "day",
+            dateAtribute: "createdAt",
             arr: [
                 {
                     id: 1,
@@ -78,14 +76,9 @@ describe("arr by date tests", () => {
 
     it("should group by month", () => {
         const result = arrByDate({
-            determineDate: date => {
-                const splited = date.split("-")
-                return `${splited[0]}-${splited[1]}`
-            }
-        })({
             arrName: "products",
-            dateAtribute: "createdAt"
-        })({
+            type: "month",
+            dateAtribute: "createdAt",
             arr: [
                 {
                     id: 1,

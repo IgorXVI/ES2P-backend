@@ -1,15 +1,21 @@
 "use strict"
 
 module.exports = ({
-    determineDate
-}) => ({
+    type,
+    arrName,
     dateAtribute,
-    arrName
-}) => (({
     arr
 }) => {
+    const determineDate = {
+        day: date => date.split(" ")[0],
+        month: date => {
+            const splited = date.split("-")
+            return `${splited[0]}-${splited[1]}`
+        }
+    }
+
     const dateHash = arr.reduce((hash, el) => {
-        const date = determineDate(el[dateAtribute])
+        const date = determineDate[type](el[dateAtribute])
 
         if (!hash[date]) {
             hash[date] = {
@@ -27,4 +33,4 @@ module.exports = ({
     }, {})
 
     return Object.keys(dateHash).map(date => dateHash[date])
-})
+}

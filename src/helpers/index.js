@@ -1,5 +1,5 @@
 module.exports = () => {
-    const safePromiseAll = require("./safe_promise_all")
+    const safePromiseAll = require("./safePromiseAll")
 
     return {
         safePromiseAll
