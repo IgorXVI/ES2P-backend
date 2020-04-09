@@ -1,7 +1,7 @@
 module.exports = ({
     errors
 }) => {
-    const errorHandler = require("./error_handler")(errors)
+    const errorHandler = require("./errorHandler")(errors)
 
     return {
         errorHandler

@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "set NODE_ENV=test",
+    "test": "jest --runInBand --verbose false",
+    "coverage": "jest --runInBand --coverage",
+    "posttest": "set NODE_ENV=development"
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,8 @@
     "knex": "^0.20.12",
     "mysql": "^2.18.1",
     "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
   }
 }
