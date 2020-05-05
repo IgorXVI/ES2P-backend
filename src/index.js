@@ -28,4 +28,7 @@ const controllers = require("./controllers")({
 
 app.use(controllers)
 
-module.exports = app
+module.exports = {
+    db,
+    app
+}

@@ -2,7 +2,7 @@
 
 require('dotenv').config()
 
-const app = require("./src")
+const { app } = require("./src")
 
 if (process.env.NODE_ENV !== "test") {
     const port = process.env.PORT
