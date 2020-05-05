@@ -3,7 +3,7 @@ module.exports = ({
     productsByMachine
 }) => (({
     type,
-    dateAtribute,
+    dateAttribute,
     arr
 }) => {
     const arrByMachine = productsByMachine({
@@ -13,7 +13,7 @@ module.exports = ({
     return arrByMachine.map(el => {
         const productsByDate = arrByDate({
             type,
-            dateAtribute,
+            dateAttribute,
             arrName: "products",
             arr: el.products
         }).map(el => {

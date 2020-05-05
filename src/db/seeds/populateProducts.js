@@ -16,47 +16,47 @@ module.exports = {
             .insert([
                 {
                     quantity: 81,
-                    machineId: 1
+                    machineName: "ON1D"
                 },
                 {
                     quantity: 82,
-                    machineId: 1
+                    machineName: "ON1D"
                 },
                 {
                     quantity: 83,
-                    machineId: 1
+                    machineName: "ON1D"
                 },
                 {
                     quantity: 84,
-                    machineId: 1
+                    machineName: "ON1D"
                 },
                 {
                     quantity: 85,
-                    machineId: 1
+                    machineName: "ON1D"
                 },
                 {
                     quantity: 86,
-                    machineId: 1
+                    machineName: "ON1D"
                 },
                 {
                     quantity: 87,
-                    machineId: 2
+                    machineName: "ON2D"
                 },
                 {
                     quantity: 88,
-                    machineId: 2
+                    machineName: "ON2D"
                 },
                 {
                     quantity: 89,
-                    machineId: 2
+                    machineName: "ON2D"
                 },
                 {
                     quantity: 90,
-                    machineId: 2
+                    machineName: "ON2D"
                 },
                 {
                     quantity: 91,
-                    machineId: 2
+                    machineName: "ON2D"
                 }
             ])
     }

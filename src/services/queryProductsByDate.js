@@ -2,28 +2,22 @@ module.exports = ({
     db,
     productsByMachineAndDate
 }) => (async ({
-    initalDate,
-    finalDate,
-    type,
-    dateAtribute
+    initialDate = new Date().toISOString(),
+    finalDate = new Date().toISOString(),
+    type = "day",
+    dateAttribute = "createdAt"
 }) => {
     const arr = await db
         .select('*')
         .from('products')
-        .whereRaw("DATE(?) BETWEEN ? AND ?", [
-            dateAtribute,
-            initalDate,
-            finalDate
-        ])
-        .orWhereBetween("? BETWEEN ? AND ?", [
-            dateAtribute,
-            initalDate,
+        .whereBetween(dateAttribute, [
+            initialDate,
             finalDate
         ])
 
     return productsByMachineAndDate({
         type,
-        dateAtribute,
+        dateAttribute,
         arr
     })
 })

@@ -7,8 +7,8 @@ describe("product by machine and date", () => {
             arrByDate: ({
                 arr,
                 type,
-                dateAtribute
-            }) => type === "day" && dateAtribute === "createdAt" ?
+                dateAttribute
+            }) => type === "day" && dateAttribute === "createdAt" ?
                     arr[0].id === 1 ?
                         [
                             {
@@ -138,7 +138,7 @@ describe("product by machine and date", () => {
 
         })({
             type: "day",
-            dateAtribute: "createdAt",
+            dateAttribute: "createdAt",
             arr: [
                 {
                     id: 1,

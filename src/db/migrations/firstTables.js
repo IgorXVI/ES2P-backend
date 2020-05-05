@@ -34,10 +34,9 @@ module.exports = {
                 .unsigned()
                 .notNullable()
 
-            table.integer("machineId")
-                .unsigned()
+            table.string("machineName")
                 .notNullable()
-                .references("machines.id")
+                .references("machines.name")
         }),
     down: knex => knex.schema
         .dropTable("products")

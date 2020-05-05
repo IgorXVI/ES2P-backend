@@ -6,7 +6,7 @@ describe("arr by date tests", () => {
         const result = arrByDate({
             arrName: "products",
             type: "day",
-            dateAtribute: "createdAt",
+            dateAttribute: "createdAt",
             arr: [
                 {
                     id: 1,
@@ -78,7 +78,7 @@ describe("arr by date tests", () => {
         const result = arrByDate({
             arrName: "products",
             type: "month",
-            dateAtribute: "createdAt",
+            dateAttribute: "createdAt",
             arr: [
                 {
                     id: 1,

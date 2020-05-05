@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require("cors")
 const helmet = require("helmet")
 const compression = require('compression')
+const expressValidator = require("express-validator")
+const knex = require("knex")
 
 const app = express()
 app.use(helmet())
@@ -11,27 +13,19 @@ app.options("*", cors())
 app.disable('x-powered-by')
 
 const db = require("./db")({
-    knex: require("knex")
+    knex
 })
 const errors = require("./errors")()
-const helpers = require("./helpers")()
 const services = require("./services")({
     db
 })
-const middlewares = require("./middlewares")({
-    errors
+const controllers = require("./controllers")({
+    errors,
+    express,
+    expressValidator,
+    services
 })
 
-app.get("/test", async (req, res, next) => {
-    try {
-        const result = await db('products').where('id', 1)
-        res.status(200).json(result)
-    }
-    catch (error) {
-        next(error)
-    }
-})
-
-app.use(middlewares.errorHandler)
+app.use(controllers)
 
 module.exports = app

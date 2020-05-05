@@ -3,7 +3,7 @@
 module.exports = ({
     type,
     arrName,
-    dateAtribute,
+    dateAttribute,
     arr
 }) => {
     const determineDate = {
@@ -15,18 +15,22 @@ module.exports = ({
     }
 
     const dateHash = arr.reduce((hash, el) => {
-        const date = determineDate[type](el[dateAtribute])
+        const dateValue = el[dateAttribute] instanceof Date ?
+            el[dateAttribute].toISOString().replace("T", " ")
+            : el[dateAttribute]
+
+        const date = determineDate[type](dateValue)
 
         if (!hash[date]) {
             hash[date] = {
-                [dateAtribute]: date,
+                [dateAttribute]: date,
                 [arrName]: []
             }
         }
 
         hash[date][arrName].push({
             ...el,
-            [dateAtribute]: undefined
+            [dateAttribute]: undefined
         })
 
         return hash
