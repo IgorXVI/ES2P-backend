@@ -22,13 +22,13 @@ module.exports = {
     test: {
         client: 'sqlite3',
         connection: {
-            filename: './test.sqlite3'
+            filename: ':memory:'
         },
         migrations: {
-            directory: './migrations'
+            directory: './src/db/migrations'
         },
         seeds: {
-            directory: './seeds'
+            directory: './src/db/seeds'
         }
     }
 }
