@@ -77,7 +77,7 @@ describe("product by machine and date", () => {
                     : [],
             productsByMachine: () => [
                 {
-                    machineId: 1,
+                    machineName: 1,
                     products: [
                         {
                             id: 1,
@@ -106,7 +106,7 @@ describe("product by machine and date", () => {
                     ]
                 },
                 {
-                    machineId: 2,
+                    machineName: 2,
                     products: [
                         {
                             id: 5,
@@ -145,27 +145,27 @@ describe("product by machine and date", () => {
                     createdAt: "2020-04-08 20:55:22",
                     otherAttr: "oloco",
                     quantity: 10,
-                    machineId: 1
+                    machineName: 1
                 },
                 {
                     id: 2,
                     createdAt: "2020-04-08 20:55:22",
                     otherAttr: "oloco",
                     quantity: 10,
-                    machineId: 1
+                    machineName: 1
                 },
                 {
                     id: 3,
                     createdAt: "2020-04-06 20:55:22",
                     otherAttr: "oloco",
-                    machineId: 1,
+                    machineName: 1,
                     quantity: 10
                 },
                 {
                     id: 4,
                     createdAt: "2020-04-06 21:55:22",
                     otherAttr: "oloco",
-                    machineId: 1,
+                    machineName: 1,
                     quantity: 10
                 },
                 {
@@ -173,27 +173,27 @@ describe("product by machine and date", () => {
                     createdAt: "2020-04-08 20:55:22",
                     otherAttr: "oloco",
                     quantity: 10,
-                    machineId: 2
+                    machineName: 2
                 },
                 {
                     id: 6,
                     createdAt: "2020-04-08 20:55:22",
                     otherAttr: "oloco",
                     quantity: 10,
-                    machineId: 2
+                    machineName: 2
                 },
                 {
                     id: 7,
                     createdAt: "2020-04-06 20:55:22",
                     otherAttr: "oloco",
-                    machineId: 2,
+                    machineName: 2,
                     quantity: 10
                 },
                 {
                     id: 8,
                     createdAt: "2020-04-06 21:55:22",
                     otherAttr: "oloco",
-                    machineId: 2,
+                    machineName: 2,
                     quantity: 10
                 }
             ]
@@ -201,7 +201,7 @@ describe("product by machine and date", () => {
 
         expect(JSON.stringify(result)).toEqual(JSON.stringify([
             {
-                machineId: 1,
+                machineName: 1,
                 productsByDate: [
                     {
                         createdAt: "2020-04-08",
@@ -238,7 +238,7 @@ describe("product by machine and date", () => {
                 ]
             },
             {
-                machineId: 2,
+                machineName: 2,
                 productsByDate: [
                     {
                         createdAt: "2020-04-08",

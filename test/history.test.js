@@ -36,6 +36,12 @@ it("should group products by date", async () => {
                 updatedAt: "2020-05-04"
             },
             {
+                quantity: 22,
+                machineName: "ON2D",
+                createdAt: "2020-04-04",
+                updatedAt: "2020-05-04"
+            },
+            {
                 quantity: 83,
                 machineName: "ON1D",
                 createdAt: "2020-05-04",
@@ -55,6 +61,7 @@ it("should group products by date", async () => {
     expect(res.statusCode).toEqual(200)
     expect(res.body.data).toEqual([
         {
+            "machineName": "ON1D",
             "productsByDate": [
                 {
                     "createdAt": "2020-04-04",
@@ -64,16 +71,14 @@ it("should group products by date", async () => {
                             "updatedAt": "2020-05-04",
                             "executionStart": null,
                             "executionEnd": null,
-                            "quantity": 81,
-                            "machineName": "ON1D"
+                            "quantity": 81
                         },
                         {
                             "id": 2,
                             "updatedAt": "2020-05-04",
                             "executionStart": null,
                             "executionEnd": null,
-                            "quantity": 82,
-                            "machineName": "ON1D"
+                            "quantity": 82
                         }
                     ],
                     "totalQuantity": 163
@@ -82,23 +87,39 @@ it("should group products by date", async () => {
                     "createdAt": "2020-05-04",
                     "products": [
                         {
-                            "id": 3,
-                            "updatedAt": "2020-05-04",
-                            "executionStart": null,
-                            "executionEnd": null,
-                            "quantity": 83,
-                            "machineName": "ON1D"
-                        },
-                        {
                             "id": 4,
                             "updatedAt": "2020-05-04",
                             "executionStart": null,
                             "executionEnd": null,
-                            "quantity": 84,
-                            "machineName": "ON1D"
+                            "quantity": 83
+                        },
+                        {
+                            "id": 5,
+                            "updatedAt": "2020-05-04",
+                            "executionStart": null,
+                            "executionEnd": null,
+                            "quantity": 84
                         }
                     ],
                     "totalQuantity": 167
+                }
+            ]
+        },
+        {
+            "machineName": "ON2D",
+            "productsByDate": [
+                {
+                    "createdAt": "2020-04-04",
+                    "products": [
+                        {
+                            "id": 3,
+                            "updatedAt": "2020-05-04",
+                            "executionStart": null,
+                            "executionEnd": null,
+                            "quantity": 22
+                        }
+                    ],
+                    "totalQuantity": 22
                 }
             ]
         }

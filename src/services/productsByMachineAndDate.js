@@ -23,7 +23,7 @@ module.exports = ({
         })
 
         return {
-            machineId: el.machineId,
+            machineName: el.machineName,
             productsByDate
         }
     })

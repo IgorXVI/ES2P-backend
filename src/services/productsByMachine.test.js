@@ -8,29 +8,29 @@ describe("product by machine", () => {
                 {
                     id: 1,
                     outroAtributo: "oloco",
-                    machineId: 1
+                    machineName: 1
                 },
                 {
                     id: 2,
                     outroAtributo: "oloco",
-                    machineId: 1
+                    machineName: 1
                 },
                 {
                     id: 3,
                     outroAtributo: "oloco",
-                    machineId: 2
+                    machineName: 2
                 },
                 {
                     id: 4,
                     outroAtributo: "oloco",
-                    machineId: 2
+                    machineName: 2
                 }
             ]
         })
 
         expect(JSON.stringify(result)).toEqual(JSON.stringify([
             {
-                machineId: 1,
+                machineName: 1,
                 products: [
                     {
                         id: 1,
@@ -43,7 +43,7 @@ describe("product by machine", () => {
                 ]
             },
             {
-                machineId: 2,
+                machineName: 2,
                 products: [
                     {
                         id: 3,

@@ -4,16 +4,16 @@ module.exports = ({
     arr
 }) => {
     const idHash = arr.reduce((hash, el) => {
-        if (!hash[el.machineId]) {
-            hash[el.machineId] = {
-                machineId: el.machineId,
+        if (!hash[el.machineName]) {
+            hash[el.machineName] = {
+                machineName: el.machineName,
                 products: []
             }
         }
 
-        hash[el.machineId].products.push({
+        hash[el.machineName].products.push({
             ...el,
-            machineId: undefined
+            machineName: undefined
         })
 
         return hash
