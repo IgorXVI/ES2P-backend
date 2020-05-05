@@ -1,10 +1,7 @@
 module.exports = ({
     expressValidator,
-    errors,
-    router
+    errors
 }) =>  (({
-    method,
-    route,
     fun,
     validationChain
 }) => {
@@ -37,5 +34,8 @@ module.exports = ({
             }
         })
 
-    return router[method](route, validationChain, handler)
+    return [
+        validationChain,
+        handler
+    ]
 })

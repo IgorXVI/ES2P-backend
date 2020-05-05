@@ -1,11 +1,13 @@
 module.exports = ({
     services,
     expressValidator,
-    lib
+    lib,
+    express
 }) => {
-    lib.start.makeQueryWithContent({
-        method: "get",
-        route: "/history",
+    const router = express.Router()
+
+    router.get("/history", lib.start.makeQueryWithContent({
+        fun: async req => services.queryProductsByDate(req.query),
         validationChain: expressValidator.checkSchema({
             initialDate: {
                 in: ["query"],
@@ -28,7 +30,8 @@ module.exports = ({
                 optional: true,
                 isIn: ["createdAt", "updatedAt", "executionStart", "executionEnd"]
             }
-        }),
-        fun: async req => services.queryProductsByDate(req.query)
-    })
+        })
+    }))
+
+    return router
 }

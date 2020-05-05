@@ -8,15 +8,17 @@ module.exports = ({
 
     const lib = require("./lib")({
         errors,
-        expressValidator,
-        router
-    })
-
-    require("./products")({
-        services,
-        lib,
         expressValidator
     })
+
+    const productController = require("./products")({
+        services,
+        lib,
+        expressValidator,
+        express
+    })
+
+    router.use("/products", productController)
 
     router.use(lib.middlewares.errorHandler)
 

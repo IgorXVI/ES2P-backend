@@ -56,7 +56,7 @@ it("should group products by date", async () => {
         ])
 
     const res = await supertest(app)
-        .get("/history?initialDate=2020-04-04&finalDate=2020-05-04")
+        .get("/products/history?initialDate=2020-04-04&finalDate=2020-05-04")
 
     expect(res.statusCode).toEqual(200)
     expect(res.body.data).toEqual([

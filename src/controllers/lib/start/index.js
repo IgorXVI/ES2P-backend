@@ -1,12 +1,10 @@
 module.exports = ({
     errors,
-    expressValidator,
-    router
+    expressValidator
 }) => {
     const makeRoute = require("./makeRoute")({
         errors,
-        expressValidator,
-        router
+        expressValidator
     })
 
     const makeQueryWithContent = require("./makeQueryWithContent")({

@@ -1,7 +1,6 @@
 module.exports = ({
     errors,
-    expressValidator,
-    router
+    expressValidator
 }) => {
     const middlewares = require("./middlewares")({
         errors
@@ -9,8 +8,7 @@ module.exports = ({
 
     const start = require("./start")({
         errors,
-        expressValidator,
-        router
+        expressValidator
     })
 
     return {
