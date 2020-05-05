@@ -6,25 +6,29 @@ module.exports = ({
     lib.start.makeQueryWithContent({
         method: "get",
         route: "/history",
-        fun: async req => services.queryProductsByDate(req.query),
         validationChain: expressValidator.checkSchema({
             initialDate: {
+                in: ["query"],
                 optional: true,
                 isISO8601: true
             },
             finitalDate: {
+                in: ["query"],
                 optional: true,
                 isISO8601: true
             },
             type: {
+                in: ["query"],
                 optional: true,
                 isString: true,
-                in: ["day", "month"]
+                isIn: ["day", "month"]
             },
             dateAttribute: {
+                in: ["query"],
                 optional: true,
-                in: ["createdAt", "updatedAt", "executionStart", "executionEnd"]
+                isIn: ["createdAt", "updatedAt", "executionStart", "executionEnd"]
             }
-        })
+        }),
+        fun: async req => services.queryProductsByDate(req.query)
     })
 }
